@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find gp1)/urdf/robot.urdf'"/>     
+    <!-- first robot1 is name of package second robot1 is name of robot -->
+
+    <arg name="x" default="-2"/>
+    <arg name="y" default="1"/>
+    <arg name="z" default="0.5"/>
+    
+    <node name="robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" 
+          args="-urdf -param robot_description -model robot -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+</launch>  

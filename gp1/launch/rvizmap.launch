@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+
+<arg name="map_file" default="$(find gp1)/world/housemap.yaml"/>
+
+	 <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+	
+	<!-- send fake joint values -->
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+		<param name="use_gui" value="false"/>
+	</node>
+	<!-- Combine joint values -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+	
+	<!-- Show in Rviz   -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find gp1)/rviz/config.rviz" ></node>
+
+
+</launch>
+

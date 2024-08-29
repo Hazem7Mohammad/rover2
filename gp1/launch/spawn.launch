@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+<!--  context:   <include file=" AAA "/>   -->
+ 
+	<include file="$(find gp1)/launch/house.launch"/>
+ 
+	<include file="$(find gp1)/launch/spawnGP.launch"/>
+
+
+</launch>
