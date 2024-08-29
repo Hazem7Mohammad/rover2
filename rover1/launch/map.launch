@@ -1,0 +1,7 @@
+<launch>
+<arg name="map" value="$(find rover1)/worlds/home1.yaml">
+</arg>
+<node pkg="map_server" type="map_server" name="map_server" args="$(arg map)">
+
+</node>
+</launch>

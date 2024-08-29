@@ -1,0 +1,12 @@
+<launch>
+
+
+<include file="$(find rover1)/launch/lidar.launch"/>
+	<arg name="node_start_delay" default="5.0" />  
+
+<include file="$(find rover1)/launch/localize.launch"/>
+	<!-- <arg name="node_start_delay" default="5.0" />   -->
+
+<include file="$(find rover1)/launch/odomtransformer.launch"/>
+
+</launch>
